@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using MySql.Data.MySqlClient;
+using FileManAPI.Models;
 
 namespace FileManAPI.Controllers
 {
@@ -23,6 +24,15 @@ namespace FileManAPI.Controllers
             myDataAdapter.Fill(myDataSet);
 
             return Request.CreateResponse(HttpStatusCode.OK, myDataSet);
+        }
+
+        public string Post( teste t)
+        {
+            try
+            {
+
+            }
+            catch { }   
         }
     }
 }
