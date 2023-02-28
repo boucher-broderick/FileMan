@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {MenuItem} from 'primeng/api';
+import { HomeServiceService } from '../home.service';
 
 
 @Component({
@@ -10,13 +11,12 @@ import {MenuItem} from 'primeng/api';
 export class MenuComponent {
   items!: MenuItem[];
 
-  ngOnInit(){
-    this.items = [
-      {
-          label: 'FileMan',
-      }
+  constructor(private homeService: HomeServiceService){
 
-  ];
+  }
+
+  changeScreen(pageNumber: number){
+    this.homeService.setCurrentPage(pageNumber);
   }
 
 }

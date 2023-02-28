@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HomeServiceService } from '../home.service';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  CurrentPage: number = 0;
+  constructor(private homeService: HomeServiceService){  }
+  
+  ngOnInit(){
+    this.homeService.getCurrentPage().subscribe((val)=>{
+      this.CurrentPage = val;
+    })
+  }
 }

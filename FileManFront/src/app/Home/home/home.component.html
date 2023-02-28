@@ -1,7 +1,15 @@
 <div style="height:100%">
     <app-menu></app-menu>
-    <div style=" display:flex; margin:3%; height: 500px; background-color: rgb(238, 237, 229); width: 94%; ">
-        <h2 style="background-color: rgb(238, 237, 229);"> THE IDEA</h2>
+    <div >
+        <div *ngIf="CurrentPage === 0">
+            <app-about></app-about>
+        </div>
+        <div *ngIf="CurrentPage === 1">
+            <app-view-demo></app-view-demo>
+        </div>
+        <div *ngIf="CurrentPage === 2">
+            <app-contact-us></app-contact-us>
+        </div>
     </div>
 </div>
 
