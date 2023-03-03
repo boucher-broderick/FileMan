@@ -10,6 +10,9 @@ import { AboutComponent } from './componentsOfHome/about/about.component';
 import { ContactUsComponent } from './componentsOfHome/contact-us/contact-us.component';
 import { ViewDemoComponent } from './componentsOfHome/view-demo/view-demo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {InputTextModule} from 'primeng/inputtext';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {ButtonModule} from 'primeng/button';
 
 
 @NgModule({
@@ -25,7 +28,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ContextMenuModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    InputTextModule,
+    InputTextareaModule,
+    ButtonModule
+    
   ],
   exports: [
     HomeComponent

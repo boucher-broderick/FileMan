@@ -3,8 +3,12 @@
     padding: 0;
     background-color: rgb(248, 247, 242);
     color: rgb(24, 78, 96);
+    
    }
 * p{
+    font-size: 20px;
+}
+* li{
     font-size: 20px;
 }
    .homeComponent{
