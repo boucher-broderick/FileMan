@@ -8,11 +8,11 @@ import { MenuComponent } from './menu/menu.component';
 import {ContextMenuModule} from 'primeng/contextmenu';
 import { AboutComponent } from './componentsOfHome/about/about.component';
 import { ContactUsComponent } from './componentsOfHome/contact-us/contact-us.component';
-import { ViewDemoComponent } from './componentsOfHome/view-demo/view-demo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {ButtonModule} from 'primeng/button';
+
 
 
 @NgModule({
@@ -21,7 +21,6 @@ import {ButtonModule} from 'primeng/button';
     MenuComponent,
     AboutComponent,
     ContactUsComponent,
-    ViewDemoComponent
   ],
   imports: [
     BrowserModule,

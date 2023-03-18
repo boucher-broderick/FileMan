@@ -1,13 +1,10 @@
-<div style="height:100%">
+<div style="height:100%; margin:0; padding: 0; width: 100%;">
     <app-menu></app-menu>
     <div >
         <div *ngIf="CurrentPage === 0">
             <app-about></app-about>
         </div>
         <div *ngIf="CurrentPage === 1">
-            <app-view-demo></app-view-demo>
-        </div>
-        <div *ngIf="CurrentPage === 2">
             <app-contact-us></app-contact-us>
         </div>
     </div>

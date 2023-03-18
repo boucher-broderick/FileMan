@@ -1,23 +1,14 @@
 <div class="homeComponent" >
-    <div style="margin:20px">
+    <div style="margin:20px" class="insideComponent ">
         <h2>Contact Form</h2>
-    <div>
-        <label for="float-input">First Name</label>
-        <input id="float-input" type="text" pInputText> 
-    </div>
-    <div>
-        <label for="float-input">Last Name</label>
-        <input id="float-input" type="text" pInputText> 
-    </div>
-    <div>
-        <label for="float-input">Email</label>
-        <input id="float-input" type="text" pInputText> 
-    </div>
-    <div>
-        <label for="float-input">Message</label>
-        <textarea [rows]="5" [cols]="30" pInputTextarea [autoResize]="true"></textarea>
-    </div>
+        <form>
+            <input type="text" pInputText class="p-inputtext" placeholder="First Name">   
+            <input type="text" pInputText class="p-inputtext" placeholder="Last Name">
+            <input type="text" pInputText class="p-inputtext" placeholder="Email">
+            <textarea [rows]="5" [cols]="30" pInputTextarea [autoResize]="true" placeholder="Email"></textarea>
+        </form>
+ 
 
-    <p-button label="Click" ></p-button>
+        <p-button label="Click" ></p-button>
     </div>
 </div>
