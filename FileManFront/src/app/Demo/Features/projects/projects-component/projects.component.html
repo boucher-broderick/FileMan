@@ -1,0 +1,19 @@
+
+<p-table [value]="projects" >
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Category</th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-projects>
+        <tr>
+            <td>{{projects.id}}</td>
+            <td>{{projects.name}}</td>
+            <td>{{projects.description}}</td>
+
+        </tr>
+    </ng-template>
+</p-table>
