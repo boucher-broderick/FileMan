@@ -32,6 +32,7 @@ public class ProjectServiceImpementation implements ProjectService {
         log.info("Fetching all projects");
         return projectRepo.findAll().stream().toList();
     }
+    //sdcsdapisdjcoasidjcaosdc
 
     @Override
     public Project get(Long id) {
