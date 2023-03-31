@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular/forms'
+import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms'
+import { Message } from 'primeng/api';
 import { HomeServiceService } from '../../home.service';
 
 
@@ -10,26 +11,39 @@ import { HomeServiceService } from '../../home.service';
 })
 export class ContactUsComponent implements OnInit {
   FormData!: FormGroup;
-  constructor(private builder: FormBuilder, private contact: HomeServiceService) { }
+  contactForm = new FormGroup({
+  firstName:  new FormControl('', Validators.required),
+  lastName: new FormControl('', Validators.required),
+  email: new FormControl('', [ Validators.required, Validators.email ]),
+  message: new FormControl('', Validators.required)
+  });
+  msgs: Message[] = [];
+  constructor(private contact: HomeServiceService) { }
 
   ngOnInit() {
-    this.FormData = this.builder.group({
-      Fullname: new FormControl('', [Validators.required]),
-      Email: new FormControl('', [Validators.required]),
-      Comment: new FormControl('', [Validators.required])
-    });
+
   }
 
 
   onSubmit(FormData: FormGroup) {
-    console.log(FormData)
-    this.contact.PostMessage(FormData)
-      .subscribe(response => {
-        location.href = 'https://mailthis.to/confirm'
-        console.log(response)
-      }, error => {
-        console.warn(error.responseText)
-        console.log({ error })
-      })
+
+    var success: boolean = true;
+    if(success){
+      this.msgs = [];
+      this.msgs.push({severity:'success', summary:'Success Message', detail:'Submitted'});
+      this.contactForm.reset();
+    }
+    else{
+      this.msgs = [];
+      this.msgs.push({severity:'error', summary:'Error Message', detail:'Submission  failed'});
+    }
+    setTimeout(() => {
+      this.clear();
+    }, 1500);
+
   }
+
+  clear() {
+    this.msgs = [];
+}
 }

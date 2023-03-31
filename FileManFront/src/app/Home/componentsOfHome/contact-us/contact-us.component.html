@@ -1,14 +1,15 @@
-<div class="homeComponent" >
-    <div style="margin:20px" class="insideComponent ">
+<div class="formComponent" >
+    <div style="margin:20px" class="insideComponentForm ">
+        <p-messages [(value)]="msgs"></p-messages>
         <h2>Contact Form</h2>
-        <form>
-            <input type="text" pInputText class="p-inputtext" placeholder="First Name">   
-            <input type="text" pInputText class="p-inputtext" placeholder="Last Name">
-            <input type="text" pInputText class="p-inputtext" placeholder="Email">
-            <textarea [rows]="5" [cols]="30" pInputTextarea [autoResize]="true" placeholder="Email"></textarea>
+        <form [formGroup]="contactForm">
+            <input type="text" pInputText class="p-inputtext" placeholder="First Name" formControlName="firstName">   
+            <input type="text" pInputText class="p-inputtext" placeholder="Last Name" formControlName="lastName">
+            <input  type="email" type="text" pInputText class="p-inputtext" placeholder="Email" formControlName="email">
+            <textarea [rows]="5" [cols]="30" pInputTextarea [autoResize]="true" placeholder="Message" 
+            formControlName="message"></textarea>
+            <p-button type="submit" [disabled]="!contactForm.valid" (onClick)="onSubmit(contactForm)">Submit</p-button>
         </form>
  
-
-        <p-button label="Click" ></p-button>
     </div>
 </div>

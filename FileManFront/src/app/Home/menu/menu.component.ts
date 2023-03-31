@@ -22,7 +22,7 @@ export class MenuComponent {
 
   viewDemo() {
     const url = this.router.serializeUrl(
-      this.router.createUrlTree([`/Login`])
+      this.router.createUrlTree([`/projects`])
     );
   
     window.open(url, '_blank')

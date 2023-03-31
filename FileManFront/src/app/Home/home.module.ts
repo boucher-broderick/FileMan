@@ -12,7 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {ButtonModule} from 'primeng/button';
-
+import {MessageModule} from 'primeng/message';
+import {MessagesModule} from 'primeng/messages';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import {ButtonModule} from 'primeng/button';
     HttpClientModule,
     InputTextModule,
     InputTextareaModule,
-    ButtonModule
+    ButtonModule,
+    MessageModule,
+    MessagesModule
     
   ],
   exports: [
