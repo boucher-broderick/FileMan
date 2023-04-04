@@ -1,12 +1,8 @@
 package com.example.FileMan;
 
-import com.example.FileMan.model.Project;
-import com.example.FileMan.repo.ProjectRepo;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -20,13 +16,6 @@ public class FileManApplication {
 		SpringApplication.run(FileManApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner run(ProjectRepo projectRepo) {
-		return args -> {
-			projectRepo.save(new Project(null, "FileMan", "Testing"));
-			projectRepo.save(new Project(null, "TestProject2", "Testing"));
-		};
-	}
 
 	@Bean
 	public CorsFilter corsFilter() {

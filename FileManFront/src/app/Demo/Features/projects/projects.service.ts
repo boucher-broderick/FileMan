@@ -1,8 +1,8 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable, tap } from 'rxjs';
+import { catchError, map, Observable, tap, throwError } from 'rxjs';
 import { CustomResponse } from '../../Interface/customResponse';
-import { Project } from '../../Interface/project';
+import { Project, ProjectExport } from '../../Interface/project';
 
 
 @Injectable({
@@ -13,15 +13,22 @@ export class ProjectsService {
   private readonly apiUrl = 'http://localhost:8080';
   constructor(private http: HttpClient) {  }
 
-  public getProjects(): Observable<Project[]>{
+  public getProjects(): Observable<any>{
     return this.http.get<CustomResponse>(`${this.apiUrl}/project/list`)
-    .pipe(
-      map((response: CustomResponse) => {
-        return response.data;
-      })
+  .pipe(map(data => {
+    console.log(data)
+    return data.data.projects;
+   } )
+  )
+}
 
-    )
-  }
+public createProjects(project: ProjectExport){
+  console.log("started");
+  this.http.post(`${this.apiUrl}/project/createProject`, project).subscribe( (val)=>
+  console.log(val));
+
+console.log("ended");
+}
   
 
   save$ = (project: Project) => <Observable<CustomResponse>>

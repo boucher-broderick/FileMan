@@ -2,6 +2,7 @@ package com.example.FileMan.resource;
 
 import com.example.FileMan.model.Project;
 import com.example.FileMan.model.Response;
+import com.example.FileMan.model.createProject;
 import com.example.FileMan.service.implementation.ProjectServiceImpementation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -9,14 +10,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-
+import static java.time.LocalDateTime.now;
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.OK;
-import static java.time.LocalDateTime.now;
 
 @RestController
 @RequestMapping("/project")
@@ -24,13 +23,26 @@ import static java.time.LocalDateTime.now;
 public class ProjectResource {
     private final ProjectServiceImpementation projectService;
 
-    @GetMapping("/list")
+    @PostMapping("/createProject")
+    public ResponseEntity<Response> createProject(@RequestBody @Valid createProject p) throws IOException{
+        return ResponseEntity.ok(
+                Response.builder()
+                        .timeStamp(now())
+                        .data(Map.of("projects", projectService.createProject(p.getName(),p.getDescription(),p.getCreatedBy())))
+                        .message("Project created")
+                        .status(OK)
+                        .statusCode(OK.value())
+                        .build()
+
+        );
+    }
+    @GetMapping("/getProjects")
     public ResponseEntity<Response> getProjects()  throws InterruptedException{
         TimeUnit.SECONDS.sleep(3);
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(now())
-                        .data(Map.of("projects", projectService.list()))
+                        .data(Map.of("projects", projectService.getProjects()))
                         .message("Projects retreived")
                         .status(OK)
                         .statusCode(OK.value())

@@ -7,6 +7,5 @@ export interface CustomResponse {
     reason: string;
     message: string;
     developerMessage: string;
-    data:  Project[];
-
+    data: any;
 }
