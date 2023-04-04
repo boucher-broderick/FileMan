@@ -1,21 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './Home/home/home.component';
-import { ProjectsComponent } from './Demo/Features/projects/projects-component/projects.component';
+
+import { DemoComponent } from './Demo/demo.component';
+import { DemoRoutingModule } from './Demo/demo-routing.module';
 
 
 const routes: Routes = [{ 
   path: '', 
   component: HomeComponent
+ }, 
+ {
+  path: 'project',
+  loadChildren: () => import(`./Demo/demo.module`).then((m) => m.DemoModule),
  },
  {
-  path: 'projects',
-  component: ProjectsComponent
+  path: 'signIn',
+  loadChildren: () => import(`./Demo/demo.module`).then((m) => m.DemoModule),
+ },
+ {
+  path: 'createAccount',
+  loadChildren: () => import(`./Demo/demo.module`).then((m) => m.DemoModule),
  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+    DemoRoutingModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

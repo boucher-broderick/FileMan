@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Project, ProjectExport } from 'src/app/Demo/Interface/project';
-import { CustomResponse } from '../../../Interface/customResponse';
+import { Project, ProjectExport } from 'src/app/Demo/Module/project';
+import { CustomResponse } from '../../../Module/customResponse';
 import { ProjectsService } from '../projects.service';
 
 @Component({
@@ -17,17 +17,17 @@ export class ProjectsComponent {
 
 
     constructor(private service: ProjectsService){
-      this.projects =[{id:1, name:"bob", description: "bob"}]
+     
     }
 
     ngOnInit(){ 
-      //                        | curser for the error is in between . and s line 24
-      // this.service.getProjects().subscribe((value: Project[])=>{
-      //   this.projects= value;
-      //   console.log(value);             //line 26
-      //   console.log( typeof(value));    //line 27
-      //   console.log(this.projects);     //line 28
-      // })
+
+       this.service.getProjects().subscribe((value: Project[])=>{
+         this.projects= value;
+         console.log(value);             //line 26
+         console.log( typeof(value));    //line 27
+         console.log(this.projects);     //line 28
+       })
     }
 
     createProj(){

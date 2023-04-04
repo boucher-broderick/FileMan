@@ -1,8 +1,8 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, tap, throwError } from 'rxjs';
-import { CustomResponse } from '../../Interface/customResponse';
-import { Project, ProjectExport } from '../../Interface/project';
+import { CustomResponse } from '../../Module/customResponse';
+import { Project, ProjectExport } from '../../Module/project';
 
 
 @Injectable({
@@ -14,7 +14,7 @@ export class ProjectsService {
   constructor(private http: HttpClient) {  }
 
   public getProjects(): Observable<any>{
-    return this.http.get<CustomResponse>(`${this.apiUrl}/project/list`)
+    return this.http.get<CustomResponse>(`${this.apiUrl}/project/getProjects`)
   .pipe(map(data => {
     console.log(data)
     return data.data.projects;

@@ -1,7 +1,10 @@
 export interface Project{
-    id: number;
+    pid: number;
     name: string;
     description: string;
+    createdBy: string;
+    createdDate: Date;
+    accessKey: String;
 }
 
 

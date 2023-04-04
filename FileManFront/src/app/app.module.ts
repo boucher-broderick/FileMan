@@ -7,22 +7,21 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './Home/home.module';
 
 import {HttpClientModule} from '@angular/common/http';
-import { FeaturesModule } from './Demo/Features/features.module';
+import { DemoModule } from './Demo/demo.module';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
     HttpClientModule,
-    FeaturesModule
+    DemoModule
 
   ],
   providers: [],

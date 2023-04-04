@@ -1,0 +1,61 @@
+#topnav {
+    background-color: rgb(249, 248, 245);
+    padding: 0;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    width: 100%;
+    top:0%;
+    display:inline-flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    position: sticky;
+  }
+  
+  
+  
+  /* Style the links inside the navigation bar */
+  #topnav a {
+    background-color: rgb(249, 248, 245);
+    float: left;
+    color: rgb(24, 78, 96);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: flex;
+    overflow: hidden;
+  }
+  
+  /* Change the color of links on hover */
+  
+  /* Add a color to the active/current link */
+  #topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+    margin:0;
+    padding:0;
+    position: absolute;
+  }
+  
+  .hover:hover {
+    background-color: rgb(249, 248, 245);
+    color: rgb(127, 180, 197);
+      cursor: pointer;
+  }
+  
+  .hover h4:hover {
+    background-color: rgb(249, 248, 245);
+    color: rgb(127, 180, 197);
+  }
+  
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }

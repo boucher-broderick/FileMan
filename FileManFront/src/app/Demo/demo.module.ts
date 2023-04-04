@@ -1,22 +1,38 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DemoRoutingModule } from './demo-routing.module';
+import { DemoComponent } from './demo.component';
+
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '../app-routing.module';
+import { RouterModule } from '@angular/router';
+import { DemoMenuComponent } from './Features/menu/menu.component';
 import { ContextMenuModule } from 'primeng/contextmenu';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ProjectsComponent } from './projects/projects-component/projects.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonModule } from 'primeng/button';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { TableModule } from 'primeng/table';
+import { ProjectsComponent } from './Features/projects/projects-component/projects.component';
+import { SignInComponent } from './Features/user-Auth/sign-in/sign-in.component';
+import { CreateAccountComponent } from './Features/user-Auth/create-account/create-account.component';
+
 
 
 @NgModule({
   declarations: [
-    ProjectsComponent
+    DemoComponent,
+    DemoMenuComponent,
+    ProjectsComponent,
+    SignInComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule,
+    CommonModule,
+    DemoRoutingModule,
     ContextMenuModule,
     ReactiveFormsModule,
     FormsModule,
@@ -27,12 +43,7 @@ import { TableModule } from 'primeng/table';
     CommonModule,
     TableModule
   ],
-  exports: [
-  ],
   providers: [],
   bootstrap: []
 })
-export class FeaturesModule { }
-
-
-
+export class DemoModule { }
