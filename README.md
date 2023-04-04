@@ -9,7 +9,7 @@ Stack:
 
 Front-End:  Angular
 
-Back-End: C#
+Back-End: Spring Boot
 
 Database: MySQL
 
