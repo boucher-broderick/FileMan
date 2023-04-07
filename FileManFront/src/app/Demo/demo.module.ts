@@ -17,7 +17,8 @@ import { TableModule } from 'primeng/table';
 import { ProjectsComponent } from './Features/projects/projects-component/projects.component';
 import { SignInComponent } from './Features/user-Auth/sign-in/sign-in.component';
 import { CreateAccountComponent } from './Features/user-Auth/create-account/create-account.component';
-
+import { CheckboxModule } from 'primeng/checkbox';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 
 
 @NgModule({
@@ -41,7 +42,9 @@ import { CreateAccountComponent } from './Features/user-Auth/create-account/crea
     MessageModule,
     MessagesModule,
     CommonModule,
-    TableModule
+    TableModule,
+    CheckboxModule,
+    DynamicDialogModule
   ],
   providers: [],
   bootstrap: []

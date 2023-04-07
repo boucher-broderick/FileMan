@@ -1,22 +1,48 @@
 
+<div style="margin: 1.5rem">
 
-<p-button (onClick)="createProj()">Click</p-button>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: .5rem;" >
+        <div>
+            <h2>Projects</h2>
+        </div>
+        <div class="closeButtons">
+            <p-button styleClass="p-button-sm" (onClick)="selectAll()">Select All</p-button>
+            <p-button styleClass="p-button-sm" (onClick)="unselectAll()">Unselect All</p-button>
+            <p-button styleClass="p-button-sm" >Add Project</p-button>
+            <p-button styleClass="p-button-sm" >Create Project</p-button>
+        </div>
 
-<p-table [value]="projects" >
-    <ng-template pTemplate="header">
-        <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Category</th>
+        
+    </div>
+    
 
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-projects>
-        <tr>
-            <td>{{projects.pid}}</td>
-            <td>{{projects.name}}</td>
-            <td>{{projects.description}}</td>
+    <p-table styleClass="p-datatable-gridlines  p-datatable-sm"   [value]="projects" >
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Select</th>
+                <th>Project</th>
+                <th>Created By</th>
+                <th>Created Date</th>
+                <th>Description</th>
+    
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-projects>
+            <tr>
+                <td>
+                    <p-checkbox [(ngModel)]="projects.checked" [binary]="true" ></p-checkbox>
+                </td>
+                <td>{{projects.name}}</td>
+                <td>{{projects.createdBy}}</td>
+                <td>{{projects.createdDate}}</td>
+                <td>{{projects.description}}</td>
+    
+            </tr>
+        </ng-template>
+    </p-table>
 
-        </tr>
-    </ng-template>
-</p-table>
+    <div *ngIf!="projects == []">
+        <p-button style="display:flex; justify-content: flex-end; margin-top:.5rem">Continue</p-button>
+    </div>
+
+</div>

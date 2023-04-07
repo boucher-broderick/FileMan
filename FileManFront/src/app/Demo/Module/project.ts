@@ -13,3 +13,14 @@ export interface ProjectExport{
     description: string;
     createdBy: String;
 }
+
+
+export interface ProjectTable{
+    checked: boolean;
+    pid: number;
+    name: string;
+    description: string;
+    createdBy: string;
+    createdDate: Date;
+    accessKey: String;
+}
