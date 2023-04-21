@@ -21,6 +21,9 @@ const routes: Routes = [{
  {
   path: 'createAccount',
   loadChildren: () => import(`./Demo/demo.module`).then((m) => m.DemoModule),
+ },
+ {
+   path: 'files', loadChildren: () => import(`./Demo/demo.module`).then((m) => m.DemoModule),
  }
 ];
 

@@ -10,10 +10,11 @@
     margin:3%; 
     width: 94%;
     height: auto;
+    border-radius: 15px 15px 15px 15px;
    }
    .homeComponent *{
     background-color: rgb(235, 238, 235);
-    
+
     
    }
 

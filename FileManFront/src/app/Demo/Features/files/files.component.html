@@ -3,14 +3,14 @@
 
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: .5rem;" >
         <div>
-            <h2>Projects</h2>
+            <h2>Files</h2>
         </div>
         <div class="closeButtons">
             <p-button styleClass="p-button-sm" (onClick)="selectAll()">Select All</p-button>
             <p-button styleClass="p-button-sm" (onClick)="unselectAll()">Unselect All</p-button>
-            <p-button styleClass="p-button-sm" >Add Project</p-button>
-            <p-button styleClass="p-button-sm" >Create Project</p-button>
-            <p-button styleClass="p-button-sm" (onClick)="gotofiles()">Files</p-button>
+            <p-button styleClass="p-button-sm" >Project</p-button>
+            <p-button styleClass="p-button-sm" >Upload</p-button>
+            <p-button styleClass="p-button-sm" >Export</p-button>
         </div>
 
         
@@ -22,6 +22,7 @@
             <tr>
                 <th>Select</th>
                 <th>Project</th>
+                <th>File Name</th>
                 <th>Created By</th>
                 <th>Created Date</th>
                 <th>Description</th>
@@ -32,8 +33,10 @@
             <tr>
                 <td>
                     <p-checkbox [(ngModel)]="projects.checked" [binary]="true" ></p-checkbox>
-                </td>
+                </td>             
+                   <td>{{projects.accessKey}}</td>
                 <td>{{projects.name}}</td>
+
                 <td>{{projects.createdBy}}</td>
                 <td>{{projects.createdDate}}</td>
                 <td>{{projects.description}}</td>

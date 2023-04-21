@@ -4,6 +4,7 @@ import { DemoComponent } from './demo.component';
 import { ProjectsComponent } from './Features/projects/projects-component/projects.component';
 import { SignInComponent } from './Features/user-Auth/sign-in/sign-in.component';
 import { CreateAccountComponent } from './Features/user-Auth/create-account/create-account.component';
+import { FilesComponent } from './Features/files/files.component';
 
 
 
@@ -19,7 +20,11 @@ const routes: Routes = [ {
     },
     {
       path: 'createAccount', component: CreateAccountComponent
-    }]
+    },
+    {
+      path: 'files', component: FilesComponent
+    }
+  ]
  }
 ];
 

@@ -1,0 +1,22 @@
+.box {
+
+        width:fit-content;
+
+        
+            display: flex;
+          justify-content: center;
+          align-items: center;
+          height :calc(100vh - 67.5px);
+          width: 100%;
+          background-color: rgb(27, 88, 108);
+}
+
+.bob{
+
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(249, 248, 245);
+    border-radius: 25px;
+}

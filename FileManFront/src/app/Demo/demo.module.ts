@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DemoRoutingModule } from './demo-routing.module';
 import { DemoComponent } from './demo.component';
-
+import { PasswordModule } from 'primeng/password';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
@@ -19,6 +19,8 @@ import { SignInComponent } from './Features/user-Auth/sign-in/sign-in.component'
 import { CreateAccountComponent } from './Features/user-Auth/create-account/create-account.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { InputTextModule } from 'primeng/inputtext';
+import { FilesComponent } from './Features/files/files.component';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
     DemoMenuComponent,
     ProjectsComponent,
     SignInComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    FilesComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,9 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
     CommonModule,
     TableModule,
     CheckboxModule,
-    DynamicDialogModule
+    DynamicDialogModule,
+    PasswordModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: []
